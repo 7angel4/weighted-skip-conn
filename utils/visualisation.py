@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
-import numpy as np
 from sklearn.manifold import TSNE
 
 from utils.datasets import *

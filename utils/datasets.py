@@ -4,7 +4,6 @@ import warnings
 warnings.simplefilter("ignore", category=UserWarning)
 
 import torch
-import os
 import torch_geometric
 import torch_geometric.datasets as tgdatasets
 

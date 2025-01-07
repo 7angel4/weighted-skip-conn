@@ -33,6 +33,8 @@ def main():
                         representing number of layers to train and test for the model (overrides config)")
     parser.add_argument("--report_per_period", type=int, help="Report training status every N epochs (overrides config)")
     parser.add_argument("--export", action="store_true", help="Export results (overrides config)")
+    parser.add_argument("--dir", type=str, help="Destination directory of exported results,\
+                        if export is true (overrides config)")
 
     args = parser.parse_args()
     
@@ -70,8 +72,15 @@ def main():
         experiment_config["report_per_period"] = args.report_per_period
     if args.layers is not None:
         experiment_config["layers"] = parse_list(args.layers)
+        
     experiment_config["export_results"] = args.export or \
             experiment_config.get("export_results", False)
+    if args.dir is None:
+        if experiment_config["export_results"]: # default to current dir
+            experiment_config["dir"] = './'
+        # else not exporting
+    else:
+        experiment_config["dir"] = args.dir
 
     # Log configuration details
     print("Configuration Loaded:")
@@ -92,6 +101,7 @@ def main():
         layers=experiment_config.get("layers", TRAIN_LAYERS),
         report_per_period=experiment_config["report_per_period"],
         export_results=experiment_config["export_results"],
+        dir=experiment_config['dir'],
         print_results=True
     )
 
