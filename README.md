@@ -1,4 +1,4 @@
-# Weighted Skip Connections Experiment
+# Weighted Skip Connections
 
 This project explores the use of Weighted Skip Connections in graph neural networks (GNNs).
 The original experiments are conducted in `jupyter notebook`, but a CLI is provided here for audience to interact with the implemented models.
@@ -32,37 +32,41 @@ We provide a sample configuration at: ./default_config.yaml
 
 ### CLI Arguments
 
-General Arguments:
-- --config <path_to_config_file>: (Required) Path to a YAML configuration file that holds the model, training, and experimental parameters.
+**General Arguments:**
 
-The following arguments will override the default paremeter in the config file.
-Arguments for model_config:
-- --model_name <model_name>: Name of the model (e.g., WSkipGNN). This will override the default model_name in the configuration.
-- --init_res_weight <value>: Initial weight for residual connections (defaults to 0 in the config).
+- `--config <path_to_config_file>`: (Required) Path to a YAML configuration file that holds the model, training, and experimental parameters.
 
-Arguments for train_config:
-- --dataset <dataset_name>: The dataset name to use for training (e.g., Cora). 
-- --lr <learning_rate>: Learning rate for the optimizer (e.g., 0.01). 
-- --weight_decay <weight_decay>: Weight decay for regularization (e.g., 0.0005).
-- --epochs <num_epochs>: Number of epochs to run the training (e.g., 400).
-- --max_patience <max_patience>: Maximum consecutive number of epochs for which 
-validation accuracy may decrease before training stops (e.g., 5).
+The following arguments will override the default parameter in the config file.
 
-Arguments for experiment_config:
-- --layers <layer_list>: A comma-separated list of integers representing the layer numbers to train and test
-(e.g., "2,4" will train and test a 2-layer model and a 4-layer model).
-- --report_per_period <int>: How frequently (in epochs) the training progress is reported.
-- --export: If specified, the results will be exported (default behavior defined in config).
-- --dir: Destination directory for exported results, if export is true (overrides config)
+**Arguments for model_config:**
+
+- `--model_name <model_name>`: Name of the model (e.g., WSkipGNN). This will override the default `model_name` in the configuration.
+- `--init_res_weight <value>`: Initial weight for residual connections (defaults to 0 in the config).
+
+**Arguments for train_config:**
+
+- `--dataset <dataset_name>`: The dataset name to use for training (e.g., Cora). 
+- `--lr <learning_rate>`: Learning rate for the optimizer (e.g., 0.01). 
+- `--weight_decay <weight_decay>`: Weight decay for regularization (e.g., 0.0005).
+- `--epochs <num_epochs>`: Number of epochs to run the training (e.g., 400).
+- `--max_patience <max_patience>`: Maximum consecutive number of epochs for which validation accuracy may decrease before training stops (e.g., 5).
+
+**Arguments for experiment_config:**
+
+- `--layers <layer_list>`: A comma-separated list of integers representing the layer numbers to train and test (e.g., "2,4" will train and test a 2-layer model and a 4-layer model).
+- `--report_per_period <int>`: How frequently (in epochs) the training progress is reported.
+- `--export`: If specified, the results will be exported (default behavior defined in config).
+- `--dir`: Destination directory for exported results, if export is true (overrides config).
+
 
 ### Example Usage
-1. Run the experiment with a specific configuration file:
+1. Run the experiment with a **specific configuration file**:
 
 ```bash
 python run.py --config config.yaml
 ```
 
-2. Overriding parameters with the CLI:
+2. **Overriding parameters** with the CLI:
 
 ```bash
 python run.py --config config.yaml --model_name "WSkipGNN" --dataset "Cora" --epochs 500 --report_per_period 100
@@ -73,7 +77,7 @@ This example overrides the model name to WSkipGNN, sets the dataset to Cora, adj
 
 ## Repository structure
 
-For CLI:
+**For CLI:**
 
 - `models`: Python module for model implementations, training and testing models
 - `utils`: Python module for miscellaneous utility functions
@@ -81,7 +85,7 @@ For CLI:
 - `default_config.yaml`: Sample config to be passed to the CLI
 - `requirement.txt`: A list of dependencies required for the CLI
 
-Our own experiments:
+**Our own experiments:**
 
 - `data`: datasets for training the models
 - `results`: our experimental results (visualisations, saved models for reproduction, csv output from evaluation...)
