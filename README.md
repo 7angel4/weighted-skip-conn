@@ -1,4 +1,4 @@
-# Weighted Skip Connections Experiment
+# Weighted Skip Connections
 
 This project explores the use of Weighted Skip Connections in graph neural networks (GNNs).
 The original experiments are conducted in `jupyter notebook`, but a CLI is provided here for audience to interact with the implemented models.
