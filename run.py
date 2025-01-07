@@ -2,6 +2,7 @@ import argparse
 from utils.config_loader import load_config
 from models.test import train_and_test
 from models.train import TRAIN_LAYERS
+from models.models import MODELS
 
 def parse_list(value):
     """
@@ -18,7 +19,7 @@ def main():
     
     # CLI Arguments for model_config
     parser.add_argument("--config", type=str, help="Path to the YAML configuration file")
-    parser.add_argument("--model_name", type=str, help="Model name (overrides config)")
+    parser.add_argument("--model_name", type=str, help=f"Model name, one of {MODELS} (overrides config)")
     parser.add_argument("--init_res_weight", type=float, help="Initial residual weight (overrides config)")
     
     # CLI Arguments for train_config
