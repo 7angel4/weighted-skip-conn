@@ -1,10 +1,8 @@
 # Weighted Skip Connections Experiment
 
-This project explores the use of Weighted Skip Connections in 
-graph neural networks (GNNs).
-The original experiments are conducted in `jupyter notebook`, but a CLI is 
-provided here for audience to interact with. Users may customise various 
-parameters for model training and testing.
+This project explores the use of Weighted Skip Connections in graph neural networks (GNNs).
+The original experiments are conducted in `jupyter notebook`, but a CLI is provided here for audience to interact with the implemented models.
+Users may customise various parameters for model training and testing.
 
 ## Installation
 
@@ -17,20 +15,22 @@ To run this experiment, ensure you have the following dependencies installed:
 pip install -r requirements.txt
 ```
 
-Usage
+## Usage
 
-Command-Line Interface (CLI)
+### Command-Line Interface (CLI)
 
 The experiment can be run using the command line. 
 Below is the basic usage pattern:
 
+```bash
 python run.py --config <path_to_config_file> [other optional arguments]
 
 Where <path_to_config_file> refers to the path of a YAML configuration file containing default parameters. 
 You can specify any additional command-line arguments to override specific configurations.
 We provide a sample configuration at: ./default_config.yaml
+```
 
-CLI Arguments
+### CLI Arguments
 
 General Arguments:
 - --config <path_to_config_file>: (Required) Path to a YAML configuration file that holds the model, training, and experimental parameters.
@@ -55,7 +55,7 @@ Arguments for experiment_config:
 - --export: If specified, the results will be exported (default behavior defined in config).
 - --dir: Destination directory for exported results, if export is true (overrides config)
 
-Example Usage
+### Example Usage
 1. Run the experiment with a specific configuration file:
 
 ```bash
@@ -70,4 +70,19 @@ python run.py --config config.yaml --model_name "WSkipGNN" --dataset "Cora" --ep
 
 This example overrides the model name to WSkipGNN, sets the dataset to Cora, adjusts the number of epochs to 500, and reports every 100 epochs.
 
+
 ## Repository structure
+
+For CLI:
+
+- `models`: Python module for model implementations, training and testing models
+- `utils`: Python module for miscellaneous utility functions
+- `run.py`: Entry point for the program
+- `default_config.yaml`: Sample config to be passed to the CLI
+- `requirement.txt`: A list of dependencies required for the CLI
+
+Our own experiments:
+
+- `data`: datasets for training the models
+- `results`: our experimental results (visualisations, saved models for reproduction, csv output from evaluation...)
+- `jupyter-notebook`: Jupyter notebooks where our original experiments are conducted
