@@ -1,0 +1,16 @@
+model_config:
+  model_name: WSkipGNN
+  init_res_weight: 0
+  hid_dim: 64
+
+train_config:
+  dataset: Cora
+  lr: 0.01
+  weight_decay: 0.0005
+  epochs: 400
+  max_patience: 5
+
+experiment_config:
+  layers: 2,4
+  report_per_period: 1000
+  export_results: true
