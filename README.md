@@ -53,6 +53,7 @@ Arguments for experiment_config:
 (e.g., "2,4" will train and test a 2-layer model and a 4-layer model).
 - --report_per_period <int>: How frequently (in epochs) the training progress is reported.
 - --export: If specified, the results will be exported (default behavior defined in config).
+- --dir: Destination directory for exported results, if export is true (overrides config)
 
 Example Usage
 1. Run the experiment with a specific configuration file:

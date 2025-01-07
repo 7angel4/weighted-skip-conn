@@ -13,4 +13,5 @@ train_config:
 experiment_config:
   layers: 2,4
   report_per_period: 1000
-  export_results: true
+  export_results: false
+  dir: None
