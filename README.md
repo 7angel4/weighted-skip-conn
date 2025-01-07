@@ -1,8 +1,9 @@
 # Weighted Skip Connections
 
-This project explores the use of Weighted Skip Connections in graph neural networks (GNNs).
-The original experiments are conducted in `jupyter notebook`, but a CLI is provided here for audience to interact with the implemented models.
-Users may customise various parameters for model training and testing.
+This project explores the use of Weighted Skip Connections in graph neural networks (GNNs), as introduced in the submitted paper for the MT2024-25 Graph Representation Learning Exam.
+
+This repository contains the model implementations, the original experiments conducted in `jupyter notebook`, plus a CLI for users to interact with the implemented models.
+The CLI allows users to customise various parameters for model training and testing.
 
 ## Installation
 
@@ -40,7 +41,7 @@ The following arguments will override the default parameter in the config file.
 
 **Arguments for model_config:**
 
-- `--model_name <model_name>`: Name of the model (e.g., WSkipGNN). This will override the default `model_name` in the configuration.
+- `--model_name <model_name>`: Name of the model (e.g., one of ['WSkipGNN', 'PlainGNN', 'SkipGNN', 'JumpKGNN']). This will override the default `model_name` in the configuration.
 - `--init_res_weight <value>`: Initial weight for residual connections (defaults to 0 in the config).
 
 **Arguments for train_config:**
